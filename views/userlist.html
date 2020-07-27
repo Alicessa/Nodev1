@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分组</title>
+    <script src="./dist/js/jquery.js"></script>
+    <link rel="stylesheet" href="./dist/css/bootstrap.css">
+    <script src="./dist/js/bootstrap.js"></script>
+
+</head>
+<style>
+    img{
+        width: 50px;
+        height: 60px;
+    }
+</style>
+<body>
+
+    <table class="table table-bordered table-hover">
+
+
+
+        <thead>
+            <tr>
+                <th>用户名</th>
+
+                <th>密码</th>
+
+
+                <th>角色</th>
+
+
+
+
+                <th>头像</th>
+
+                <th>操作</th>
+            </tr>
+            {{each data}}
+            <tr>
+                
+                <th><h3>{{$value.username}}</h3></th>
+                <th>{{$value.password}}</th>
+                <th>{{$value.em}}</th>
+                <th> <img src="{{$value.img}}"></th><!--  静态资源也可以是图片app.use(express.static('public')) -->
+
+                <th><a href="/usall?id={{$value.id}}">查看</a></th>
+                <th><a href="/delete?id={{$value.id}}">删除</a></th>
+                <th><a href="/updata?id={{$value.id}}">修改</a></th>
+            </tr>
+  {{/each}}
+
+        </thead>
+
+
+        <tbody>
+
+        </tbody>
+    </table>
+
+</body>
+
+
+
+</html>
